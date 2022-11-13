@@ -1,9 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image} from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView} from 'react-native';
+
+import Book from './components/bookTile.js';
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <View style={styles.header}>
         <StatusBar style="auto" />
         <Text style={styles.h1}>Bookshop</Text>
@@ -14,16 +16,14 @@ export default function App() {
         
       </View>
 
-      <View style={styles.book}>
-          <Text style={styles.h2}>Book title 1</Text>
-          <Text style={styles.writer}>by Some Random dude</Text>
-          <Text style={styles.summary}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</Text>
-          <View style={styles.extra}>
-            <Text style={styles.isbn}>ISBN 978-7-2165-1860-1</Text>
-            <Text style={styles.btn}>Read</Text>
-          </View>
-      </View>
-    </View>
+      <Book title="Book title 1" writer="by Some Random dude" summary="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" isbn="ISBN 978-7-2165-1860-1" btn="read"></Book>
+      <Book title="Book title 2" writer="by some other dude" summary="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" isbn="ISBN 978-2-1425-4277-8" btn="read"></Book>
+      <Book title="Book title 3" writer="by Jane Doe" summary="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" isbn="ISBN 978-5-9684-0436-7" btn="read"></Book>
+      <Book title="Book title 4" writer="by John Doe" summary="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" isbn="ISBN 978-8-3356-4834-0" btn="read"></Book>
+
+
+
+    </ScrollView>
   );
 }
 
